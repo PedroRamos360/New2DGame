@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour {
+    public int player = 1;
+
     public Transform bulletPosition;
     public GameObject bulletPrefab;
-    private Animator animator;
+    public Animator animator;
 
-    private void Start() {
-        animator = FindObjectOfType<Animator>();
-    }
+    public KeyCode shoot;
+
     void Update() {
-        if (Input.GetButtonDown("Fire1") && animator.GetBool("PistolPicked")) {
+        if (Input.GetKeyDown(shoot) && animator.GetBool("PistolPicked")) {
             ShootBullet();
         }
     }

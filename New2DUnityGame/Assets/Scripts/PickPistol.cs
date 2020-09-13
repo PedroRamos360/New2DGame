@@ -2,13 +2,18 @@
 
 public class PickPistol : MonoBehaviour {
     public GameObject pistol;
-    private Animator animator;
+    public Animator animator;
 
-    private void Start() {
-        animator = FindObjectOfType<Animator>();
-    }
+    public KeyCode pick;
+
     private void OnTriggerStay2D(Collider2D collision) {
-        if (collision.CompareTag("Pistol") && Input.GetKeyDown("f")) {
+        Debug.Log(collision.CompareTag("Pistol"));
+        Debug.Log(Input.GetKeyDown(pick));
+        if (collision.CompareTag("Pistol") && Input.GetKeyDown(pick)) {
+            Destroy(pistol);
+            animator.SetBool("PistolPicked", true);
+        }
+        if (collision.CompareTag("Pistol2") && Input.GetKeyDown(pick)) {
             Destroy(pistol);
             animator.SetBool("PistolPicked", true);
         }

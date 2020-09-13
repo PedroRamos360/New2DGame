@@ -13,9 +13,17 @@ public class BulletBehavior : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (!collision.CompareTag("Player")) {
-            DestroyBullet();
+        if (GetComponent<Shoot>().player == 1) {
+            if (!collision.CompareTag("Player1")) {
+                DestroyBullet();
+            }
         }
+        if (GetComponent<Shoot>().player == 2) {
+            if (!collision.CompareTag("Player2")) {
+                DestroyBullet();
+            }
+        }
+
     }
 
     private void DestroyBullet() {
