@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour {
-    public int player = 1;
-
     public Transform bulletPosition;
     public GameObject bulletPrefab;
     public Animator animator;

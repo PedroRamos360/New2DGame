@@ -65,6 +65,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BulletBehavior.cs" />
     <Compile Include="Assets\Scripts\PickPistol.cs" />
+    <Compile Include="Assets\Scripts\PistolPick.cs" />
+    <Compile Include="Assets\Scripts\PlayerDeath.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Shoot.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

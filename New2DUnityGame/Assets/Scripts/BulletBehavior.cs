@@ -13,17 +13,15 @@ public class BulletBehavior : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (GetComponent<Shoot>().player == 1) {
-            if (!collision.CompareTag("Player1")) {
-                DestroyBullet();
-            }
+        if (collision.CompareTag("Player1")) {
+            DestroyBullet();
+            FindObjectOfType<PlayerDeath>().player1damage += 1;
+        } else if (collision.CompareTag("Player2")) {
+            DestroyBullet();
+            FindObjectOfType<PlayerDeath>().player2damage += 1;
+        } else {
+            DestroyBullet();
         }
-        if (GetComponent<Shoot>().player == 2) {
-            if (!collision.CompareTag("Player2")) {
-                DestroyBullet();
-            }
-        }
-
     }
 
     private void DestroyBullet() {

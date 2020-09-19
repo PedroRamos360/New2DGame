@@ -36,22 +36,6 @@ public class PlayerMovement : MonoBehaviour {
 
         Vector3 movement = new Vector3(x, y, 0);
         MoveCharacter(movement);
-
-
-        /*
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-        Vector3 movement = new Vector3(x, y, 0);
-        MoveCharacter(movement);
-
-        if (y != 0) {
-            FlipCharacterY(y);
-        }
-
-        if (x != 0) {
-            FlipCharacterX(x);
-        }
-        */
     }
 
     void MoveCharacter(Vector3 vector) {
