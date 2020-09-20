@@ -12,10 +12,12 @@ public class PistolPick : MonoBehaviour {
         if (collision.CompareTag("Player1") && Input.GetKeyDown(pickPlayer1)) {
             Destroy(gameObject);
             player1Animator.SetBool("PistolPicked", true);
+            FindObjectOfType<AudioManager>().Play("Pickup");
         }
         if (collision.CompareTag("Player2") && Input.GetKeyDown(pickPlayer2)) {
             Destroy(gameObject);
             player2Animator.SetBool("PistolPicked", true);
+            FindObjectOfType<AudioManager>().Play("Pickup");
         }
     }
 }

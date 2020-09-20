@@ -16,9 +16,11 @@ public class BulletBehavior : MonoBehaviour {
         if (collision.CompareTag("Player1")) {
             DestroyBullet();
             FindObjectOfType<PlayerDeath>().player1damage += 1;
+            FindObjectOfType<AudioManager>().Play("Damage");
         } else if (collision.CompareTag("Player2")) {
             DestroyBullet();
             FindObjectOfType<PlayerDeath>().player2damage += 1;
+            FindObjectOfType<AudioManager>().Play("Damage");
         } else {
             DestroyBullet();
         }
