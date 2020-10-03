@@ -18,10 +18,11 @@ public class PlayerDeath : MonoBehaviour {
     public GameObject VictoryMenu;
 
     private void Update() {
-        if (player1health <= 0)
+        if (player1health <= 0) {
             Destroy(player1);
             player1dead = true;
             VictoryMenu.SetActive(true);
+        }
 
         if (player2health <= 0) {
             Destroy(player2);

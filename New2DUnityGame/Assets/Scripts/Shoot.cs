@@ -8,10 +8,14 @@ public class Shoot : MonoBehaviour {
     public GameObject bulletPrefab;
     public Animator animator;
 
+    private bool shootCooldownOver = true;
+
     public KeyCode shoot;
 
     void Update() {
-        if (Input.GetKeyDown(shoot) && animator.GetBool("PistolPicked")) {
+        if (Input.GetKey(shoot) && animator.GetBool("PistolPicked") && shootCooldownOver) {
+            shootCooldownOver = false;
+            Invoke("SetCooldownOver", 0.5f);
             ShootBullet();
         }
     }
@@ -19,4 +23,9 @@ public class Shoot : MonoBehaviour {
     private void ShootBullet() {
         Instantiate(bulletPrefab, bulletPosition.position, bulletPosition.rotation);
     }
+
+    private void SetCooldownOver() {
+        shootCooldownOver = true;
+    }
+
 }
