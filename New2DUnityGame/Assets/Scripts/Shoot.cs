@@ -8,14 +8,20 @@ public class Shoot : MonoBehaviour {
     public GameObject bulletPrefab;
     public Animator animator;
 
-    private bool shootCooldownOver = true;
+    private bool shootCooldownOverPistol = true;
+    private bool shootCooldownOverM4 = true;
 
     public KeyCode shoot;
 
     void Update() {
-        if (Input.GetKey(shoot) && animator.GetBool("PistolPicked") && shootCooldownOver) {
-            shootCooldownOver = false;
-            Invoke("SetCooldownOver", 0.5f);
+        if (Input.GetKey(shoot) && animator.GetBool("PistolPicked") && shootCooldownOverPistol) {
+            shootCooldownOverPistol = false;
+            Invoke("SetCooldownOverPistol", 0.5f);
+            ShootBullet();
+        }
+        if (Input.GetKey(shoot) && animator.GetBool("M4Picked") && shootCooldownOverM4) {
+            shootCooldownOverM4 = false;
+            Invoke("SetCooldownOverM4", 0.2f);
             ShootBullet();
         }
     }
@@ -24,8 +30,12 @@ public class Shoot : MonoBehaviour {
         Instantiate(bulletPrefab, bulletPosition.position, bulletPosition.rotation);
     }
 
-    private void SetCooldownOver() {
-        shootCooldownOver = true;
+    private void SetCooldownOverPistol() {
+        shootCooldownOverPistol = true;
+    }
+
+    private void SetCooldownOverM4() {
+        shootCooldownOverM4 = true;
     }
 
 }

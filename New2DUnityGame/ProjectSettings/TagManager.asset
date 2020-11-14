@@ -5,9 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pistol
-  - Pistol2
   - Player1
   - Player2
+  - M4
   layers:
   - Default
   - TransparentFX
