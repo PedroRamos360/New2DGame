@@ -65,10 +65,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\BulletBehavior.cs" />
-    <Compile Include="Assets\Scripts\GunPick.cs" />
+    <Compile Include="Assets\Scripts\GenerateGun.cs" />
     <Compile Include="Assets\Scripts\HealthText.cs" />
     <Compile Include="Assets\Scripts\PlayerDeath.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\PlayerPickGun.cs" />
     <Compile Include="Assets\Scripts\Shoot.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
     <Compile Include="Assets\Scripts\StartMenu.cs" />
