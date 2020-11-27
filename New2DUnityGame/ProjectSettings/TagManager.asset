@@ -8,6 +8,8 @@ TagManager:
   - Player1
   - Player2
   - M4
+  - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX

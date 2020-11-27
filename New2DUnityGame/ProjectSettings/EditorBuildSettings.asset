@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PVPMode.unity
     guid: b777763509408654498f1f7d8d2d68fc
+  - enabled: 1
+    path: Assets/Scenes/Waves.unity
+    guid: a19e4541df3068a4e93cc732378c7dd9
   m_configObjects: {}
