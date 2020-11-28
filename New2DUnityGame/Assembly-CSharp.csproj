@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EnemyDeath.cs" />
     <Compile Include="Assets\Scripts\ScriptsMenu\StartMenu.cs" />
     <Compile Include="Assets\Scripts\ScriptsPVPMode\AudioManager.cs" />
     <Compile Include="Assets\Scripts\ScriptsPVPMode\BulletBehavior.cs" />
@@ -75,7 +74,11 @@
     <Compile Include="Assets\Scripts\ScriptsPVPMode\Shoot.cs" />
     <Compile Include="Assets\Scripts\ScriptsPVPMode\Sound.cs" />
     <Compile Include="Assets\Scripts\ScriptsPVPMode\VictoryHandler.cs" />
+    <Compile Include="Assets\Scripts\ScriptsWaves\EnemyBehaviour.cs" />
+    <Compile Include="Assets\Scripts\ScriptsWaves\EnemyDeath.cs" />
+    <Compile Include="Assets\Scripts\ScriptsWaves\GenerateEnemy.cs" />
     <Compile Include="Assets\Scripts\ScriptsWaves\PlayerDeathWaves.cs" />
+    <Compile Include="Assets\Scripts\ScriptsWaves\PlayersHealth.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

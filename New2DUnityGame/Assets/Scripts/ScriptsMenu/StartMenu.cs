@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour {
     public GameObject OptionsMenu;
+    public GameObject ChoosePlayerMenu;
     public void PlayPVPMode() {
         SceneManager.LoadScene("PVPMode");
     }
-    public void PLayWavesMode() {
-        SceneManager.LoadScene("Waves");
+    public void PlayWavesMode() {
+        gameObject.SetActive(false);
+        ChoosePlayerMenu.SetActive(true);
+    }
 
+    public void LoadWavesScene() {
+        SceneManager.LoadScene("Waves");
     }
 
     public void Options() {

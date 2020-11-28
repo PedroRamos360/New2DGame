@@ -3,25 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDeathWaves : MonoBehaviour {
-    [HideInInspector]
-    public int player1health = 100;
-    [HideInInspector]
-    public int player2health = 100;
-
     public GameObject player1;
     public GameObject player2;
 
+    PlayersHealth playersHealth;
+    private bool healthP1Decreased = true;
+    private bool healthP2Decreased = true;
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    private void Start() {
+        playersHealth = FindObjectOfType<PlayersHealth>();
+    }
+    private void OnCollisionStay2D(Collision2D collision) {
         if (collision.gameObject.tag == "Enemy") {
             if (gameObject == player1) {
-                player1health -= 20;
-                Debug.Log(player1health);
+                if (healthP1Decreased) {
+                    Invoke("DecreaseP1Health", 0.3f);
+                    healthP1Decreased = false;
+                }    
             }
 
             if (gameObject == player2) {
-                player2health -= 20;
-                Debug.Log(player2health);
+                if (healthP2Decreased) {
+                    Invoke("DecreaseP2Health", 0.3f);
+                    healthP2Decreased = false;
+                }
             }
 
         }
@@ -29,11 +34,21 @@ public class PlayerDeathWaves : MonoBehaviour {
 
 
     private void Update() {
-        if (player1health <= 0) {
+        if (playersHealth.p1health <= 0) {
             Destroy(player1);
         }
-        if (player2health <= 0) {
+        if (playersHealth.p2health <= 0) {
             Destroy(player2);
         }
+    }
+
+    private void DecreaseP1Health() {
+        playersHealth.p1health -= 20;
+        healthP1Decreased = true;
+    }
+
+    private void DecreaseP2Health() {
+        playersHealth.p2health -= 20;
+        healthP2Decreased = true;
     }
 }
