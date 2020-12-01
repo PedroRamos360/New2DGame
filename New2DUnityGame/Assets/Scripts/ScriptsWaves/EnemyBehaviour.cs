@@ -26,40 +26,42 @@ public class EnemyBehaviour : MonoBehaviour {
         down = false;
         right = false;
         // Decisão do movimento
-        if (player1.transform.position.x > gameObject.transform.position.x) {
-            right = true;
-        } else if (player1.transform.position.x < gameObject.transform.position.x) {
-            left = true;
+        if (player1) {
+            if (player1.transform.position.x > gameObject.transform.position.x) {
+                right = true;
+            } else if (player1.transform.position.x < gameObject.transform.position.x) {
+                left = true;
+            }
+
+            if (player1.transform.position.y > gameObject.transform.position.y) {
+                up = true;
+            } else if (player1.transform.position.y < gameObject.transform.position.y) {
+                down = true;
+            }
+
+
+
+
+            // Movimento
+            if (up) {
+                y = 1;
+                FlipEnemyY(y);
+            } else if (down) {
+                y = -1;
+                FlipEnemyY(y);
+            } else y = 0;
+
+            if (left) {
+                x = -1;
+                FlipEnemyX(x);
+            } else if (right) {
+                x = 1;
+                FlipEnemyX(x);
+            } else x = 0;
+
+            Vector3 movement = new Vector3(x, y, 0);
+            MoveEnemy(movement);
         }
-
-        if (player1.transform.position.y > gameObject.transform.position.y) {
-            up = true;
-        } else if (player1.transform.position.y < gameObject.transform.position.y) {
-            down = true;
-        }
-
-
-
-
-        // Movimento
-        if (up) {
-            y = 1;
-            FlipEnemyY(y);
-        } else if (down) {
-            y = -1;
-            FlipEnemyY(y);
-        } else y = 0;
-
-        if (left) {
-            x = -1;
-            FlipEnemyX(x);
-        } else if (right) {
-            x = 1;
-            FlipEnemyX(x);
-        } else x = 0;
-
-        Vector3 movement = new Vector3(x, y, 0);
-        MoveEnemy(movement);
     }
 
     void MoveEnemy(Vector3 vector) {

@@ -6,6 +6,9 @@ public class PlayerDeathWaves : MonoBehaviour {
     public GameObject player1;
     public GameObject player2;
 
+    public GameObject loseMenu;
+    public GameObject wavesMenu;
+
     PlayersHealth playersHealth;
     private bool healthP1Decreased = true;
     private bool healthP2Decreased = true;
@@ -32,10 +35,13 @@ public class PlayerDeathWaves : MonoBehaviour {
         }
     }
 
-
     private void Update() {
         if (playersHealth.p1health <= 0) {
             Destroy(player1);
+            Time.timeScale = 0;
+
+            wavesMenu.SetActive(false);
+            loseMenu.SetActive(true);
         }
         if (playersHealth.p2health <= 0) {
             Destroy(player2);

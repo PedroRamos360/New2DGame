@@ -6,9 +6,26 @@ public class GenerateEnemy : MonoBehaviour {
     public GameObject enemy;
     private bool enemyInstatiated = true;
 
+    private float timeToGenerateEnemy = 3;
+    [HideInInspector]
+    public int enemiesInstatiated = 0;
+
+    [HideInInspector]
+    public int enemiesKilled = 0;
+
     private void Update() {
-        if (enemyInstatiated) {
-            Invoke("InstatiateEnemy", 2);
+        if (enemiesKilled >= FindObjectOfType<WaveCounter>().waveNumber * 3) {
+            enemiesKilled = 0;
+            enemiesInstatiated = 0;
+            FindObjectOfType<WaveCounter>().waveNumber += 1;
+            if (timeToGenerateEnemy >= 1.5f) {
+                timeToGenerateEnemy -= 0.5f;
+            }
+            
+        }
+        if (enemyInstatiated && enemiesInstatiated < FindObjectOfType<WaveCounter>().waveNumber * 3) {
+            Invoke("InstatiateEnemy", timeToGenerateEnemy);
+            enemiesInstatiated += 1;
             enemyInstatiated = false;
         }
         
