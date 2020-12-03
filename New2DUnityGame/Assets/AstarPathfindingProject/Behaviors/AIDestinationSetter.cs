@@ -21,6 +21,7 @@ namespace Pathfinding {
 		private void Start() {
 			target = GameObject.FindGameObjectWithTag("Player1").transform;
 		}
+
 		void OnEnable () {
 			ai = GetComponent<IAstarAI>();
 			// Update the destination right before searching for a path as well.

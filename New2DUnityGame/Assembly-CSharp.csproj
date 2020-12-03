@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\ScriptsWaves\EnemyBehaviour.cs" />
     <Compile Include="Assets\Scripts\ScriptsWaves\EnemyDeath.cs" />
     <Compile Include="Assets\Scripts\ScriptsWaves\GenerateEnemy.cs" />
+    <Compile Include="Assets\Scripts\ScriptsWaves\GunsGenerator.cs" />
     <Compile Include="Assets\Scripts\ScriptsWaves\LoseScreen.cs" />
     <Compile Include="Assets\Scripts\ScriptsWaves\PlayerDeathWaves.cs" />
     <Compile Include="Assets\Scripts\ScriptsWaves\PlayersHealth.cs" />
@@ -319,11 +320,11 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.19f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>D:/GitHub/New2DGame/New2DUnityGame/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
-    </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
       <HintPath>D:/GitHub/New2DGame/New2DUnityGame/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>D:/GitHub/New2DGame/New2DUnityGame/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.19f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

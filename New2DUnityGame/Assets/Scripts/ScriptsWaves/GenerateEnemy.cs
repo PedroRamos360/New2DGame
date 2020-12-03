@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Pathfinding;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,11 +13,19 @@ public class GenerateEnemy : MonoBehaviour {
 
     [HideInInspector]
     public int enemiesKilled = 0;
+    private void Start() {
+        
+    }
 
     private void Update() {
         if (enemiesKilled >= FindObjectOfType<WaveCounter>().waveNumber * 3) {
             enemiesKilled = 0;
             enemiesInstatiated = 0;
+            //if (FindObjectOfType<AIPath>().maxSpeed <= 5) {
+            //    //FindObjectOfType<AIPath>().maxSpeed += 0.3f;
+
+            //}
+            Debug.Log(FindObjectOfType<AIPath>().maxSpeed);
             FindObjectOfType<WaveCounter>().waveNumber += 1;
             if (timeToGenerateEnemy >= 1.5f) {
                 timeToGenerateEnemy -= 0.5f;
@@ -24,13 +33,13 @@ public class GenerateEnemy : MonoBehaviour {
             
         }
         if (enemyInstatiated && enemiesInstatiated < FindObjectOfType<WaveCounter>().waveNumber * 3) {
-            Invoke("InstatiateEnemy", timeToGenerateEnemy);
+            Invoke("InstantiateEnemy", timeToGenerateEnemy);
             enemiesInstatiated += 1;
             enemyInstatiated = false;
         }
         
     }
-    private void InstatiateEnemy() {
+    private void InstantiateEnemy() {
         var enemyPositions = new List<Vector3>{
             new Vector3(4.52f, 2.34f, 0),
             new Vector3(-5.5f, 6.05f, 0),
