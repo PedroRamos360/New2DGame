@@ -2251,6 +2251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 4119183107289774962, guid: a6af60b0c9ba74d428693108b20d1988, type: 3}
+  aipath: {fileID: 492481141243283766, guid: a6af60b0c9ba74d428693108b20d1988, type: 3}
   enemiesInstatiated: 0
   enemiesKilled: 0
 --- !u!1 &1657659336

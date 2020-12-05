@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GenerateEnemy : MonoBehaviour {
     public GameObject enemy;
+    public AIPath aipath;
     private bool enemyInstatiated = true;
 
     private float timeToGenerateEnemy = 3;
@@ -20,12 +21,12 @@ public class GenerateEnemy : MonoBehaviour {
     private void Update() {
         if (enemiesKilled >= FindObjectOfType<WaveCounter>().waveNumber * 3) {
             enemiesKilled = 0;
+            
             enemiesInstatiated = 0;
-            //if (FindObjectOfType<AIPath>().maxSpeed <= 5) {
-            //    //FindObjectOfType<AIPath>().maxSpeed += 0.3f;
-
-            //}
-            Debug.Log(FindObjectOfType<AIPath>().maxSpeed);
+            if (aipath.maxSpeed <= 5) {
+                aipath.maxSpeed += 0.3f;
+            }
+            Debug.Log(aipath.maxSpeed);
             FindObjectOfType<WaveCounter>().waveNumber += 1;
             if (timeToGenerateEnemy >= 1.5f) {
                 timeToGenerateEnemy -= 0.5f;
