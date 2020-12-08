@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Security.Cryptography;
 
 namespace Pathfinding {
 	/// <summary>
@@ -17,9 +18,14 @@ namespace Pathfinding {
 		/// <summary>The object that the AI should move to</summary>
 		public Transform target;
 		IAstarAI ai;
+		private GameObject player1;
+		private GameObject player2;
+		private float differenceToP1;
+		private float differenceToP2;
 
 		private void Start() {
-			target = GameObject.FindGameObjectWithTag("Player1").transform;
+			player1 = GameObject.FindGameObjectWithTag("Player1");
+			player2 = GameObject.FindGameObjectWithTag("Player2");
 		}
 
 		void OnEnable () {
@@ -37,6 +43,20 @@ namespace Pathfinding {
 
 		/// <summary>Updates the AI's destination every frame</summary>
 		void Update () {
+			if (player1 && player2) {
+				differenceToP1 = System.Math.Abs(gameObject.transform.position.x - player1.transform.position.x +
+					gameObject.transform.position.y - player1.transform.position.y);
+
+				differenceToP2 = System.Math.Abs(gameObject.transform.position.x - player2.transform.position.x +
+					gameObject.transform.position.y - player2.transform.position.y);
+
+				if (differenceToP1 < differenceToP2) {
+					target = player1.transform;
+				} else {
+					target = player2.transform;
+				}
+			}
+
 			if (target != null && ai != null) ai.destination = target.position;
 		}
 	}

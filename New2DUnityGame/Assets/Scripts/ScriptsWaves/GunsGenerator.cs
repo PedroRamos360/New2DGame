@@ -5,6 +5,7 @@ using UnityEngine;
 public class GunsGenerator : MonoBehaviour {
     public GameObject m4;
     private bool gunInstatiated = false;
+    public bool p1mode;
 
     void Update() {
         if (FindObjectOfType<WaveCounter>().waveNumber == 3) {
@@ -27,7 +28,14 @@ public class GunsGenerator : MonoBehaviour {
         var random = new System.Random();
         int index = random.Next(gunPositions.Count);
         Quaternion m4Rotation = new Quaternion(0, 0, 0, 0);
-        Instantiate(m4, gunPositions[index], m4Rotation);
+        if (p1mode)
+            Instantiate(m4, gunPositions[index], m4Rotation);
+        else {
+            Instantiate(m4, gunPositions[index], m4Rotation);
+            index = random.Next(gunPositions.Count);
+            Instantiate(m4, gunPositions[index], m4Rotation);
+        }
+
         gunInstatiated = true;
     }
 }

@@ -19,6 +19,11 @@ public class StartMenu : MonoBehaviour {
         SceneManager.LoadScene("Waves");
     }
 
+    public void LoadWavesScene2P() {
+        SceneManager.LoadScene("Waves2P");
+    }
+
+
     public void Options() {
         gameObject.SetActive(false);
         OptionsMenu.SetActive(true);

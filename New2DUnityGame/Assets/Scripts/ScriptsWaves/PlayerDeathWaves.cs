@@ -45,6 +45,10 @@ public class PlayerDeathWaves : MonoBehaviour {
         }
         if (playersHealth.p2health <= 0) {
             Destroy(player2);
+            Time.timeScale = 0;
+
+            wavesMenu.SetActive(false);
+            loseMenu.SetActive(true);
         }
     }
 
