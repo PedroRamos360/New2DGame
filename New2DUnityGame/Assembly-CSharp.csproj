@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\ScriptsPVPMode\BulletBehavior.cs" />
     <Compile Include="Assets\Scripts\ScriptsPVPMode\GenerateGun.cs" />
     <Compile Include="Assets\Scripts\ScriptsPVPMode\HealthText.cs" />
+    <Compile Include="Assets\Scripts\ScriptsPVPMode\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\ScriptsPVPMode\PlayerDeath.cs" />
     <Compile Include="Assets\Scripts\ScriptsPVPMode\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\ScriptsPVPMode\PlayerPickGun.cs" />

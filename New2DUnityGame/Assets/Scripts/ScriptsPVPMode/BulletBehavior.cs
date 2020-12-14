@@ -20,11 +20,11 @@ public class BulletBehavior : MonoBehaviour {
             if (collision.CompareTag("Player1")) {
                 DestroyBullet();
                 FindObjectOfType<PlayerDeath>().player1health -= 20;
-                FindObjectOfType<AudioManager>().Play("Damage");
+                FindObjectOfType<AudioManager>().Play("DamageSound");
             } else if (collision.CompareTag("Player2")) {
                 DestroyBullet();
                 FindObjectOfType<PlayerDeath>().player2health -= 20;
-                FindObjectOfType<AudioManager>().Play("Damage");
+                FindObjectOfType<AudioManager>().Play("DamageSound");
             } else {
                 DestroyBullet();
             }

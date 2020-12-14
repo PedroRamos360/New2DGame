@@ -26,7 +26,6 @@ public class GenerateEnemy : MonoBehaviour {
             if (aipath.maxSpeed <= 5) {
                 aipath.maxSpeed += 0.3f;
             }
-            Debug.Log(aipath.maxSpeed);
             FindObjectOfType<WaveCounter>().waveNumber += 1;
             if (timeToGenerateEnemy >= 1.5f) {
                 timeToGenerateEnemy -= 0.5f;

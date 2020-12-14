@@ -55,7 +55,9 @@ namespace Pathfinding {
 				} else {
 					target = player2.transform;
 				}
-			}
+			} else if (player1) {
+				target = player1.transform;
+            }
 
 			if (target != null && ai != null) ai.destination = target.position;
 		}

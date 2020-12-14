@@ -9,7 +9,9 @@ public class HealthText : MonoBehaviour {
     public TextMeshProUGUI p2HealthText;
 
     void Update() {
-        p1HealthText.text = FindObjectOfType<PlayerDeath>().player1health.ToString();
-        p2HealthText.text = FindObjectOfType<PlayerDeath>().player2health.ToString();
+        if (FindObjectOfType<PlayerDeath>()) {
+            p1HealthText.text = FindObjectOfType<PlayerDeath>().player1health.ToString();
+            p2HealthText.text = FindObjectOfType<PlayerDeath>().player2health.ToString();
+        }
     }
 }

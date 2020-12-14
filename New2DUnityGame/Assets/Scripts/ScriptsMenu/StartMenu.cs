@@ -39,6 +39,7 @@ public class StartMenu : MonoBehaviour {
     public void Back() {
         selectSound.Play();
         gameObject.SetActive(true);
+        ChoosePlayerMenu.SetActive(false);
         OptionsMenu.SetActive(false);
     }
 

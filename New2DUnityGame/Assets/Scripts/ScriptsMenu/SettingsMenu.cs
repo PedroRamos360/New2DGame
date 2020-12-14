@@ -7,10 +7,19 @@ public class SettingsMenu : MonoBehaviour {
     public AudioMixer audioMixer;
 
     public void SetMusicVolume(float volume) {
-        audioMixer.SetFloat("Music", volume);
+        if (volume > -40) {
+            audioMixer.SetFloat("Music", volume);
+        } else {
+            audioMixer.SetFloat("Music", -80);
+        }
+        
     }
 
     public void SetGameSoundsVolume(float volume) {
-        audioMixer.SetFloat("GameSounds", volume);
+        if (volume > -40) {
+            audioMixer.SetFloat("GameSounds", volume);
+        } else {
+            audioMixer.SetFloat("GameSounds", -80);
+        }
     }
 }

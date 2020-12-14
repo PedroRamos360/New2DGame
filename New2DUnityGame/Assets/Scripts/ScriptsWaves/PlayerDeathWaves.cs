@@ -20,14 +20,16 @@ public class PlayerDeathWaves : MonoBehaviour {
         if (collision.gameObject.tag == "Enemy") {
             if (gameObject == player1) {
                 if (healthP1Decreased) {
-                    Invoke("DecreaseP1Health", 0.3f);
+                    DecreaseP1Health();
+                    Invoke("CanTakeDamageP1", 0.5f);
                     healthP1Decreased = false;
                 }    
             }
 
             if (gameObject == player2) {
                 if (healthP2Decreased) {
-                    Invoke("DecreaseP2Health", 0.3f);
+                    DecreaseP2Health();
+                    Invoke("CanTakeDamageP2", 0.5f);
                     healthP2Decreased = false;
                 }
             }
@@ -54,11 +56,19 @@ public class PlayerDeathWaves : MonoBehaviour {
 
     private void DecreaseP1Health() {
         playersHealth.p1health -= 20;
-        healthP1Decreased = true;
+        FindObjectOfType<AudioManager>().Play("DamageSound");
     }
 
     private void DecreaseP2Health() {
         playersHealth.p2health -= 20;
+        FindObjectOfType<AudioManager>().Play("DamageSound");
+    }
+
+    private void CanTakeDamageP1() {
+        healthP1Decreased = true;
+    }
+
+    private void CanTakeDamageP2() {
         healthP2Decreased = true;
     }
 }
