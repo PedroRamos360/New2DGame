@@ -13,17 +13,17 @@ public class LoseScreen : MonoBehaviour {
     }
 
     public void TryAgain() {
-        SceneManager.LoadScene("Waves");
         Time.timeScale = 1;
+        SceneManager.LoadScene("Waves");
     }
 
     public void TryAgainP2() {
-        SceneManager.LoadScene("Waves");
         Time.timeScale = 1;
+        SceneManager.LoadScene("Waves");
     }
 
     public void MainMenu() {
-        SceneManager.LoadScene("StartMenu");
         Time.timeScale = 1;
+        SceneManager.LoadScene("StartMenu");
     }
 }

@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour {
     public GameObject OptionsMenu;
     public GameObject ChoosePlayerMenu;
+    public GameObject ControlsMenu;
     public AudioSource selectSound;
+
 
     public void PlayPVPMode() {
         selectSound.Play();
@@ -36,11 +37,22 @@ public class StartMenu : MonoBehaviour {
         OptionsMenu.SetActive(true);
     }
 
+    public void Controls() {
+        selectSound.Play();
+        gameObject.SetActive(false);
+        ControlsMenu.SetActive(true);
+    }
+
     public void Back() {
         selectSound.Play();
         gameObject.SetActive(true);
         ChoosePlayerMenu.SetActive(false);
         OptionsMenu.SetActive(false);
+        ControlsMenu.SetActive(false);
+    }
+
+    public void Exit() {
+        Application.Quit();
     }
 
 }

@@ -13,6 +13,8 @@ public class PlayerDeathWaves : MonoBehaviour {
     private bool healthP1Decreased = true;
     private bool healthP2Decreased = true;
 
+    private bool playerDied = false;
+
     private void Start() {
         playersHealth = FindObjectOfType<PlayersHealth>();
     }
@@ -38,20 +40,25 @@ public class PlayerDeathWaves : MonoBehaviour {
     }
 
     private void Update() {
-        if (playersHealth.p1health <= 0) {
-            Destroy(player1);
-            Time.timeScale = 0;
+        if (!playerDied) {
+            if (playersHealth.p1health <= 0) {
+                Destroy(player1);
+                Time.timeScale = 0;
 
-            wavesMenu.SetActive(false);
-            loseMenu.SetActive(true);
-        }
-        if (playersHealth.p2health <= 0) {
-            Destroy(player2);
-            Time.timeScale = 0;
+                wavesMenu.SetActive(false);
+                loseMenu.SetActive(true);
+                playerDied = true;
+            }
+            else if (playersHealth.p2health <= 0) {
+                Destroy(player2);
+                Time.timeScale = 0;
 
-            wavesMenu.SetActive(false);
-            loseMenu.SetActive(true);
+                wavesMenu.SetActive(false);
+                loseMenu.SetActive(true);
+                playerDied = true;
+            }
         }
+
     }
 
     private void DecreaseP1Health() {
